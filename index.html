@@ -70,3 +70,115 @@ cursor:pointer;
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Loja de Ovos de Páscoa</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #FFF3E6;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            color: #8B4513;
+            margin-top: 40px;
+        }
+
+        /* Container dos produtos */
+        .produtos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 20px;
+        }
+
+        /* Cada card */
+        .produto {
+            background: white;
+            width: 230px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .produto:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #5A2D0C;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: #8B4513;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #A0522D;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🐰 Loja de Ovos de Páscoa 🍫</h1>
+
+    <div class="produtos">
+
+        <div class="produto">
+            <h2>Ovo de Chocolate</h2>
+            <p>R$ 35</p>
+            <a href="https://wa.me/5527999699243" target="_blank">
+                <button>Comprar no WhatsApp</button>
+            </a>
+        </div>
+
+        <div class="produto">
+            <h2>Ovo de Kinder</h2>
+            <p>R$ 50</p>
+            <a href="https://wa.me/5527999699243" target="_blank">
+                <button>Comprar no WhatsApp</button>
+            </a>
+        </div>
+
+        <div class="produto">
+            <h2>Ovo de Oreo</h2>
+            <p>R$ 45</p>
+            <a href="https://wa.me/5527999699243" target="_blank">
+                <button>Comprar no WhatsApp</button>
+            </a>
+        </div>
+
+        <div class="produto">
+            <h2>Ovo de Nutella</h2>
+            <p>R$ 60</p>
+            <a href="https://wa.me/5527999699243" target="_blank">
+                <button>Comprar no WhatsApp</button>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
