@@ -7,10 +7,22 @@
 <style>
 
 body{
-font-family: Arial;
-background:#fff1e6;
-text-align:center;
+font-family: Arial, sans-serif;
 margin:0;
+text-align:center;
+
+/* fundo pastel */
+background: linear-gradient(
+135deg,
+#fffaf5,
+#f8f3ff,
+#f1f7ff
+);
+
+/* textura suave */
+background-image:
+radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6) 0%, transparent 40%),
+radial-gradient(circle at 80% 80%, rgba(255,255,255,0.5) 0%, transparent 40%);
 }
 
 h1{
@@ -24,16 +36,30 @@ margin:0;
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:20px;
+gap:25px;
 padding:30px;
 }
 
 .produto{
 background:white;
-width:220px;
+width:230px;
 padding:20px;
 border-radius:12px;
-box-shadow:0 5px 10px rgba(0,0,0,0.2);
+box-shadow:0 5px 12px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.produto:hover{
+transform:scale(1.05);
+}
+
+h2{
+color:#5a2d0c;
+}
+
+p{
+font-size:18px;
+color:#333;
 }
 
 button{
@@ -44,6 +70,74 @@ padding:10px 15px;
 border-radius:8px;
 cursor:pointer;
 font-size:15px;
+transition:0.3s;
+}
+
+button:hover{
+background:#1ebe5d;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🐰 Loja de Ovos de Páscoa 🍫</h1>
+
+<div class="produtos">
+
+<div class="produto">
+<h2>Ovo Nuvem de Ninho</h2>
+<p>R$45</p>
+<a href="https://wa.me/5527999699243">
+<button>Comprar no WhatsApp</button>
+</a>
+</div>
+
+<div class="produto">
+<h2>Ovo Brigadeiro Supremo</h2>
+<p>R$45</p>
+<a href="https://wa.me/5527999699243">
+<button>Comprar no WhatsApp</button>
+</a>
+</div>
+
+<div class="produto">
+<h2>Ovo Amor de Morango</h2>
+<p>R$50</p>
+<a href="https://wa.me/5527999699243">
+<button>Comprar no WhatsApp</button>
+</a>
+</div>
+
+<div class="produto">
+<h2>Ovo Surpresa de Uva</h2>
+<p>R$50</p>
+<a href="https://wa.me/5527999699243">
+<button>Comprar no WhatsApp</button>
+</a>
+</div>
+
+<div class="produto">
+<h2>Ovo Explosão de Oreo</h2>
+<p>R$55</p>
+<a href="https://wa.me/5527999699243">
+<button>Comprar no WhatsApp</button>
+</a>
+</div>
+
+<div class="produto">
+<h2>Ovo Dupla Perfeita</h2>
+<p>R$50</p>
+<a href="https://wa.me/5527999699243">
+<button>Comprar no WhatsApp</button>
+</a>
+</div>
+
+</div>
+
+</body>
+</html>
 }
 
 button:hover{
