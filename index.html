@@ -3,16 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loja de Ovos de Páscoa</title>
+<title>ovos de pascoa</title>
 
 <style>
 
 body{
-font-family:Arial, sans-serif;
+font-family: Arial, sans-serif;
 margin:0;
 text-align:center;
 
-background:linear-gradient(135deg,#fffaf5,#f8f3ff,#f1f7ff);
+/* fundo pastel suave */
+background: linear-gradient(135deg,#fffaf5,#fdf6ff,#f1f7ff);
+
+/* textura suave */
+background-image:
+radial-gradient(circle at 20% 30%, rgba(255,182,193,0.2) 20px, transparent 21px),
+radial-gradient(circle at 70% 40%, rgba(173,216,230,0.2) 20px, transparent 21px),
+radial-gradient(circle at 40% 70%, rgba(255,228,181,0.2) 20px, transparent 21px);
 }
 
 h1{
@@ -36,25 +43,6 @@ width:230px;
 padding:20px;
 border-radius:15px;
 box-shadow:0 6px 15px rgba(0,0,0,0.15);
-transition:0.3s;
-}
-
-.produto:hover{
-transform:translateY(-5px) scale(1.05);
-}
-
-.produto img{
-width:150px;
-margin-bottom:10px;
-}
-
-h2{
-color:#5a2d0c;
-}
-
-p{
-font-size:18px;
-color:#333;
 }
 
 button{
@@ -71,87 +59,70 @@ button:hover{
 background:#1ebe5d;
 }
 
-/* botão whatsapp flutuante */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:25px;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-
 </style>
 </head>
 
 <body>
 
-<h1>🐰 Loja de Ovos de Páscoa 🍫</h1>
+<h1>ovos de pascoa</h1>
 
 <div class="produtos">
 
 <div class="produto">
-<img src="https://i.imgur.com/M6rwarW.png">
 <h2>Ovo Explosão de Oreo</h2>
-<p>R$50</p>
+<p>300g = R$50</p>
+<p>2 ovos de 150g = R$50</p>
 <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20Explosão%20de%20Oreo">
-<button>Comprar no WhatsApp</button>
+<button>Comprar</button>
 </a>
 </div>
 
 <div class="produto">
-<img src="https://i.imgur.com/M6rwarW.png">
-<h2>Ovo Nuvem de Ninho</h2>
-<p>R$45</p>
+<h2>Ovo de Ninho</h2>
+<p>300g = R$50</p>
+<p>2 ovos de 150g = R$50</p>
 <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Ninho">
-<button>Comprar no WhatsApp</button>
+<button>Comprar</button>
 </a>
 </div>
 
 <div class="produto">
-<img src="https://i.imgur.com/M6rwarW.png">
-<h2>Ovo Brigadeiro Supremo</h2>
-<p>R$60</p>
+<h2>Ovo de Brigadeiro</h2>
+<p>300g = R$50</p>
+<p>2 ovos de 150g = R$50</p>
 <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro">
-<button>Comprar no WhatsApp</button>
+<button>Comprar</button>
 </a>
 </div>
 
 <div class="produto">
-<img src="https://i.imgur.com/M6rwarW.png">
-<h2>Ovo Amor de Morango</h2>
-<p>R$60</p>
+<h2>Ovo de Brigadeiro com Morango</h2>
+<p>300g = R$50</p>
+<p>2 ovos de 150g = R$50</p>
 <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Morango">
-<button>Comprar no WhatsApp</button>
+<button>Comprar</button>
 </a>
 </div>
 
 <div class="produto">
-<img src="https://i.imgur.com/M6rwarW.png">
-<h2>Ovo Surpresa de Uva</h2>
-<p>R$60</p>
+<h2>Ovo de Brigadeiro com Uva Verde</h2>
+<p>300g = R$50</p>
+<p>2 ovos de 150g = R$50</p>
 <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Uva">
-<button>Comprar no WhatsApp</button>
+<button>Comprar</button>
 </a>
 </div>
 
 <div class="produto">
-<img src="https://i.imgur.com/M6rwarW.png">
-<h2>Ovo Dupla Perfeita</h2>
-<p>R$60</p>
+<h2>Ovo de Brigadeiro com Ninho</h2>
+<p>300g = R$50</p>
+<p>2 ovos de 150g = R$50</p>
 <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Ninho">
-<button>Comprar no WhatsApp</button>
+<button>Comprar</button>
 </a>
 </div>
 
 </div>
-
-<a class="whatsapp" href="https://wa.me/5527999699243">💬</a>
 
 </body>
 </html>
