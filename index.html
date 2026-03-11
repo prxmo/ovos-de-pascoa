@@ -1,211 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<title>Delícias da Páscoa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>🐰Delícias da Páscoa🍫</title>
 
-<style>
-
-body{
-font-family: Arial;
-margin:0;
-background: radial-gradient(circle,#ffd6e0 2px, transparent 2px);
-background-size:40px 40px;
-background-color:#fff5f7;
-}
-
-header{
-background:#7b3f2a;
-color:white;
-text-align:center;
-padding:20px;
-font-size:28px;
-font-weight:bold;
-}
-
-.card{
-background:white;
-width:550px;
-margin:40px auto;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-.galeria{
-display:flex;
-justify-content:center;
-gap:15px;
-margin-bottom:20px;
-}
-
-.galeria img{
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:10px;
-}
-
-button{
-background:#2ecc71;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:8px;
-cursor:pointer;
-font-size:16px;
-}
-
-button:hover{
-background:#27ae60;
-}
-
-label{
-font-weight:bold;
-}
-
-</style>
 </head>
 
 <body>
+    <header>
 
-<header>
-🐰 Delícias da Páscoa 🍫
-</header>
+        <h1>🐰Delícias da Páscoa🍫</h1>
+    </header>
 
-<div class="card">
+    <div class="produtos">
 
-<h2>🍫 Monte seu pedido</h2>
+        <div class="produto">
+            <label>
+                <img src="assets/ovo-oreo.webp" alt="">
+                <br>
+                *imagens meramente ilustrativas
 
-<div class="galeria">
+            </label>
+            <h2>Ovo Explosão de Oreo</h2>
+            <p>300g = R$55</p>
+            <p>2 ovos de 150g = R$55</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20Explosão%20de%20Oreo">
+                <button>Comprar</button>
+            </a>
+        </div>
 
-<div class="galeria">
+        <div class="produto">
+            <img src="assets/ovo-ninho.webp" alt="">
+            <h2>Ovo de Ninho</h2>
+            <p>300g = R$50</p>
+            <p>2 ovos de 150g = R$50</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Ninho">
+                <button>Comprar</button>
+            </a>
+        </div>
 
-<img src="ativos/ovo-oreo.webp" alt="Ovo de Oreo">
-<img src="ativos/ovo-ninho.webp" alt="Ovo de Ninho">
-<img src="ativos/ovo-brigadeiro.jpg" alt="Ovo de Brigadeiro">
-<img src="ativos/ovo-morango.webp" alt="Ovo de Morango">
-<img src="ativos/ovo-uva-verde.webp" alt="Ovo de Uva Verde">
+        <div class="produto">
+            <img src="assets/ovo-brigadeiro.webp" alt="">
+            <h2>Ovo de Brigadeiro</h2>
+            <p>300g = R$50</p>
+            <p>2 ovos de 150g = R$50</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro">
+                <button>Comprar</button>
+            </a>
+        </div>
 
-</div>
+        <div class="produto">
+            <img src="assets/ovo-morango.webp" alt="">
+            <h2>Ovo de Brigadeiro com Morango</h2>
+            <p>300g = R$55</p>
+            <p>2 ovos de 150g = R$55</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Morango">
+                <button>Comprar</button>
+            </a>
+        </div>
 
-</div>
+        <div class="produto">
+            <img src="assets/ovo-uva-verde.webp" alt="">
+            <h2>Ovo de Brigadeiro com Uva Verde</h2>
+            <p>300g = R$55</p>
+            <p>2 ovos de 150g = R$55</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Uva">
+                <button>Comprar</button>
+            </a>
+        </div>
+            </a>
+        </div>
 
-<p>Preço do ovo 300g: <b>R$50</b></p>
-
-<label>Quantidade de ovos (máx 5):</label>
-<input type="number" id="quantidade" min="1" max="5" value="1" onchange="gerarOvos()">
-
-<div id="ovos"></div>
-
-<br>
-
-<button onclick="comprar()">Comprar pelo WhatsApp</button>
-
-</div>
-
-<script>
-
-const precoOvo = 50;
-const precoComplemento = 2;
-
-function gerarOvos(){
-
-let qtd = document.getElementById("quantidade").value;
-let area = document.getElementById("ovos");
-
-area.innerHTML="";
-
-for(let i=1;i<=qtd;i++){
-
-area.innerHTML += `
-
-<hr>
-
-<h3>Ovo ${i}</h3>
-
-<label>Sabor:</label>
-
-<select id="sabor${i}">
-<option>Oreo</option>
-<option>Ninho</option>
-<option>Brigadeiro</option>
-<option>Brigadeiro com Morango</option>
-<option>Brigadeiro com Uva Verde</option>
-</select>
-
-<br><br>
-
-<label>Complementos (+R$2 cada):</label><br>
-
-<input type="checkbox" value="Paçoca" id="pacoca${i}"> Paçoca <br>
-<input type="checkbox" value="Leite Ninho" id="ninho${i}"> Leite Ninho <br>
-<input type="checkbox" value="Amendoim" id="amendoim${i}"> Amendoim <br>
-
-`;
-
-}
-
-}
-
-gerarOvos();
-
-function comprar(){
-
-let qtd = document.getElementById("quantidade").value;
-
-let total = 0;
-
-let mensagem = "🍫 Pedido de Ovos de Páscoa %0A%0A";
-
-mensagem += "Quantidade de ovos: "+qtd+"%0A%0A";
-
-for(let i=1;i<=qtd;i++){
-
-let sabor = document.getElementById("sabor"+i).value;
-
-let complementos = [];
-
-let preco = precoOvo;
-
-if(document.getElementById("pacoca"+i).checked){
-complementos.push("Paçoca");
-preco += precoComplemento;
-}
-
-if(document.getElementById("ninho"+i).checked){
-complementos.push("Leite Ninho");
-preco += precoComplemento;
-}
-
-if(document.getElementById("amendoim"+i).checked){
-complementos.push("Amendoim");
-preco += precoComplemento;
-}
-
-mensagem += "Ovo "+i+": "+sabor;
-
-if(complementos.length>0){
-
-mensagem += " | Complementos: "+complementos.join(", ");
-
-}
-
-mensagem += "%0A";
-
-total += preco;
-
-}
-
-mensagem += "%0A💰 Preço total: R$"+total;
-
-let url = "https://wa.me/5527999699243?text="+mensagem;
-  
-window.open(url,"_blank");
-
-}
-
-</script>
+    </div>
 
 </body>
+<script src="scripts.js"></script>
+
 </html>
