@@ -1,128 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🐰Delícias da Páscoa🍫</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>🐰Delícias da Páscoa🍫</title>
 
-<style>
-
-body{
-font-family: Arial, sans-serif;
-margin:0;
-text-align:center;
-
-/* fundo pastel suave */
-background: linear-gradient(135deg,#fffaf5,#fdf6ff,#f1f7ff);
-
-/* textura suave */
-background-image:
-radial-gradient(circle at 20% 30%, rgba(255,182,193,0.2) 20px, transparent 21px),
-radial-gradient(circle at 70% 40%, rgba(173,216,230,0.2) 20px, transparent 21px),
-radial-gradient(circle at 40% 70%, rgba(255,228,181,0.2) 20px, transparent 21px);
-}
-
-h1{
-background:#6b3e26;
-color:white;
-padding:20px;
-margin:0;
-}
-
-.produtos{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:25px;
-padding:30px;
-}
-
-.produto{
-background:white;
-width:230px;
-padding:20px;
-border-radius:15px;
-box-shadow:0 6px 15px rgba(0,0,0,0.15);
-}
-
-button{
-background:#25D366;
-color:white;
-border:none;
-padding:10px 15px;
-border-radius:8px;
-cursor:pointer;
-font-size:15px;
-}
-
-button:hover{
-background:#1ebe5d;
-}
-
-</style>
 </head>
 
 <body>
+    <header>
 
-<h1>🐰Delícias da Páscoa🍫</h1>
+        <h1>🐰Delícias da Páscoa🍫</h1>
+    </header>
 
-<div class="produtos">
+    <div class="produtos">
 
-<div class="produto">
-<h2>Ovo Explosão de Oreo</h2>
-<p>300g = R$55</p>
-<p>2 ovos de 150g = R$55</p>
-<a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20Explosão%20de%20Oreo">
-<button>Comprar</button>
-</a>
-</div>
+        <div class="produto">
+            <label>
+                <img src="assets/ovo-oreo.webp" alt="">
+                <br>
+                *imagens meramente ilustrativas
 
-<div class="produto">
-<h2>Ovo de Ninho</h2>
-<p>300g = R$50</p>
-<p>2 ovos de 150g = R$50</p>
-<a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Ninho">
-<button>Comprar</button>
-</a>
-</div>
+            </label>
+            <h2>Ovo Explosão de Oreo</h2>
+            <p>300g = R$55</p>
+            <p>2 ovos de 150g = R$55</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20Explosão%20de%20Oreo">
+                <button>Comprar</button>
+            </a>
+        </div>
 
-<div class="produto">
-<h2>Ovo de Brigadeiro</h2>
-<p>300g = R$50</p>
-<p>2 ovos de 150g = R$50</p>
-<a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro">
-<button>Comprar</button>
-</a>
-</div>
+        <div class="produto">
+            <img src="assets/ovo-ninho.webp" alt="">
+            <h2>Ovo de Ninho</h2>
+            <p>300g = R$50</p>
+            <p>2 ovos de 150g = R$50</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Ninho">
+                <button>Comprar</button>
+            </a>
+        </div>
 
-<div class="produto">
-<h2>Ovo de Brigadeiro com Morango</h2>
-<p>300g = R$55</p>
-<p>2 ovos de 150g = R$55</p>
-<a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Morango">
-<button>Comprar</button>
-</a>
-</div>
+        <div class="produto">
+            <img src="assets/ovo-brigadeiro.webp" alt="">
+            <h2>Ovo de Brigadeiro</h2>
+            <p>300g = R$50</p>
+            <p>2 ovos de 150g = R$50</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro">
+                <button>Comprar</button>
+            </a>
+        </div>
 
-<div class="produto">
-<h2>Ovo de Brigadeiro com Uva Verde</h2>
-<p>300g = R$55</p>
-<p>2 ovos de 150g = R$55</p>
-<a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Uva">
-<button>Comprar</button>
-</a>
-</div>
+        <div class="produto">
+            <img src="assets/ovo-morango.webp" alt="">
+            <h2>Ovo de Brigadeiro com Morango</h2>
+            <p>300g = R$55</p>
+            <p>2 ovos de 150g = R$55</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Morango">
+                <button>Comprar</button>
+            </a>
+        </div>
 
-<div class="produto">
-<h2>Ovo de Brigadeiro com Ninho</h2>
-<p>300g = R$55</p>
-<p>2 ovos de 150g = R$55</p>
-<a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Ninho">
-<button>Comprar</button>
-</a>
-</div>
+        <div class="produto">
+            <img src="assets/ovo-uva-verde.webp" alt="">
+            <h2>Ovo de Brigadeiro com Uva Verde</h2>
+            <p>300g = R$55</p>
+            <p>2 ovos de 150g = R$55</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Uva">
+                <button>Comprar</button>
+            </a>
+        </div>
 
-</div>
+        <div class="produto">
+            <img src="assets/ovo-brigadeiro-ninho.webp" alt="">
+            <h2>Ovo de Brigadeiro com Ninho</h2>
+            <p>300g = R$55</p>
+            <p>2 ovos de 150g = R$55</p>
+            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Ninho">
+                <button>Comprar</button>
+            </a>
+        </div>
+
+    </div>
 
 </body>
+<script src="scripts.js"></script>
+
 </html>

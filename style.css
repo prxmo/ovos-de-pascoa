@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+font-family: Arial, sans-serif;
+text-align:center;
+width: 100vw;
+height: 100vh;
+
+
+/* fundo pastel suave */
+background: linear-gradient(135deg,#fffaf5,#fdf6ff,#f1f7ff);
+
+/* textura suave */
+background-image:
+radial-gradient(circle at 20% 30%, rgba(255,182,193,0.2) 20px, transparent 21px),
+radial-gradient(circle at 70% 40%, rgba(173,216,230,0.2) 20px, transparent 21px),
+radial-gradient(circle at 40% 70%, rgba(255,228,181,0.2) 20px, transparent 21px);
+}
+
+h1{
+background:#6b3e26;
+color:white;
+padding:20px;
+margin:0;
+}
+
+.produtos{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+padding:30px;
+max-width:1000px;
+margin:auto;
+}
+img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.produto{
+background:white;
+flex: 0 1 calc(33.33% - 25px);
+padding:20px;
+border-radius:15px;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+.produto p{
+margin:2px 0;
+}
+button{
+background:#25D366;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+}
+
+button:hover{
+background:#1ebe5d;
+}
+
+@media (max-width:700px){
+.produto{
+flex: 0 1 100%;
+}
+}
