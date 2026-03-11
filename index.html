@@ -9,12 +9,10 @@
 body{
 font-family: Arial;
 margin:0;
-background: radial-gradient(circle,#fce4ec 2px, transparent 2px);
+background: radial-gradient(circle,#ffd6e0 2px, transparent 2px);
 background-size:40px 40px;
-background-color:#fff0f5;
+background-color:#fff5f7;
 }
-
-/* TOPO */
 
 header{
 background:#7b3f2a;
@@ -25,41 +23,30 @@ font-size:28px;
 font-weight:bold;
 }
 
-/* AREA PEDIDO */
-
 .card{
-
 background:white;
-width:500px;
+width:550px;
 margin:40px auto;
 padding:25px;
 border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
-
 }
 
-/* IMAGENS */
-
 .galeria{
-
 display:flex;
 justify-content:center;
 gap:15px;
 margin-bottom:20px;
-
 }
 
 .galeria img{
-
 width:120px;
 height:120px;
 object-fit:cover;
 border-radius:10px;
-
 }
 
 button{
-
 background:#2ecc71;
 color:white;
 border:none;
@@ -67,19 +54,14 @@ padding:12px 20px;
 border-radius:8px;
 cursor:pointer;
 font-size:16px;
-
 }
 
 button:hover{
-
 background:#27ae60;
-
 }
 
-select,input{
-
-padding:5px;
-
+label{
+font-weight:bold;
 }
 
 </style>
@@ -91,18 +73,15 @@ padding:5px;
 🐰 Delícias da Páscoa 🍫
 </header>
 
-
 <div class="card">
 
 <h2>🍫 Monte seu pedido</h2>
 
-<!-- IMAGENS -->
-
 <div class="galeria">
 
-<img src="oreo.jpg">
-<img src="ninho.jpg">
-<img src="brigadeiro.jpg">
+<img src="ativos/ovo-oreo.webp">
+<img src="ativos/ovo-ninho.webp">
+<img src="ativos/ovo-brigadeiro.webp">
 
 </div>
 
@@ -129,7 +108,7 @@ function gerarOvos(){
 let qtd = document.getElementById("quantidade").value;
 let area = document.getElementById("ovos");
 
-area.innerHTML = "";
+area.innerHTML="";
 
 for(let i=1;i<=qtd;i++){
 
@@ -151,14 +130,11 @@ area.innerHTML += `
 
 <br><br>
 
-<label>Complemento (+R$2):</label>
+<label>Complementos (+R$2 cada):</label><br>
 
-<select id="comp${i}">
-<option value="">Sem complemento</option>
-<option>Paçoca</option>
-<option>Leite Ninho</option>
-<option>Amendoim</option>
-</select>
+<input type="checkbox" value="Paçoca" id="pacoca${i}"> Paçoca <br>
+<input type="checkbox" value="Leite Ninho" id="ninho${i}"> Leite Ninho <br>
+<input type="checkbox" value="Amendoim" id="amendoim${i}"> Amendoim <br>
 
 `;
 
@@ -174,23 +150,38 @@ let qtd = document.getElementById("quantidade").value;
 
 let total = 0;
 
-let mensagem = "🍫 Pedido de Ovos de Páscoa %0A";
+let mensagem = "🍫 Pedido de Ovos de Páscoa %0A%0A";
 
-mensagem += "Quantidade de ovos: " + qtd + "%0A%0A";
+mensagem += "Quantidade de ovos: "+qtd+"%0A%0A";
 
 for(let i=1;i<=qtd;i++){
 
 let sabor = document.getElementById("sabor"+i).value;
-let comp = document.getElementById("comp"+i).value;
+
+let complementos = [];
 
 let preco = precoOvo;
 
+if(document.getElementById("pacoca"+i).checked){
+complementos.push("Paçoca");
+preco += precoComplemento;
+}
+
+if(document.getElementById("ninho"+i).checked){
+complementos.push("Leite Ninho");
+preco += precoComplemento;
+}
+
+if(document.getElementById("amendoim"+i).checked){
+complementos.push("Amendoim");
+preco += precoComplemento;
+}
+
 mensagem += "Ovo "+i+": "+sabor;
 
-if(comp != ""){
+if(complementos.length>0){
 
-mensagem += " | Complemento: "+comp+" (+R$2)";
-preco += precoComplemento;
+mensagem += " | Complementos: "+complementos.join(", ");
 
 }
 
@@ -202,7 +193,7 @@ total += preco;
 
 mensagem += "%0A💰 Preço total: R$"+total;
 
-let url = "https://wa.me/5527996192066?text=" + mensagem;
+let url = "https://wa.me/5527996192066?text="+mensagem;
 
 window.open(url,"_blank");
 
