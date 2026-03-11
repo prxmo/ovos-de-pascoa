@@ -1,6 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Delícias da Páscoa</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background: radial-gradient(circle,#fce4ec 2px, transparent 2px);
+background-size:40px 40px;
+background-color:#fff0f5;
+}
+
+/* TOPO */
+
+header{
+background:#7b3f2a;
+color:white;
+text-align:center;
+padding:20px;
+font-size:28px;
+font-weight:bold;
+}
+
+/* AREA PEDIDO */
+
+.card{
+
+background:white;
+width:500px;
+margin:40px auto;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+}
+
+/* IMAGENS */
+
+.galeria{
+
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:20px;
+
+}
+
+.galeria img{
+
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:10px;
+
+}
+
+button{
+
+background:#2ecc71;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+
+}
+
+button:hover{
+
+background:#27ae60;
+
+}
+
+select,input{
+
+padding:5px;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+🐰 Delícias da Páscoa 🍫
+</header>
+
+
 <div class="card">
 
 <h2>🍫 Monte seu pedido</h2>
+
+<!-- IMAGENS -->
+
+<div class="galeria">
+
+<img src="oreo.jpg">
+<img src="ninho.jpg">
+<img src="brigadeiro.jpg">
+
+</div>
 
 <p>Preço do ovo 300g: <b>R$50</b></p>
 
@@ -10,6 +114,7 @@
 <div id="ovos"></div>
 
 <br>
+
 <button onclick="comprar()">Comprar pelo WhatsApp</button>
 
 </div>
@@ -35,6 +140,7 @@ area.innerHTML += `
 <h3>Ovo ${i}</h3>
 
 <label>Sabor:</label>
+
 <select id="sabor${i}">
 <option>Oreo</option>
 <option>Ninho</option>
@@ -46,6 +152,7 @@ area.innerHTML += `
 <br><br>
 
 <label>Complemento (+R$2):</label>
+
 <select id="comp${i}">
 <option value="">Sem complemento</option>
 <option>Paçoca</option>
@@ -102,3 +209,6 @@ window.open(url,"_blank");
 }
 
 </script>
+
+</body>
+</html>
