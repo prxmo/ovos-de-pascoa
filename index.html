@@ -1,82 +1,104 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<div class="card">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>🐰Delícias da Páscoa🍫</title>
+<h2>🍫 Monte seu pedido</h2>
 
-</head>
+<p>Preço do ovo 300g: <b>R$50</b></p>
 
-<body>
-    <header>
+<label>Quantidade de ovos (máx 5):</label>
+<input type="number" id="quantidade" min="1" max="5" value="1" onchange="gerarOvos()">
 
-        <h1>🐰Delícias da Páscoa🍫</h1>
-    </header>
+<div id="ovos"></div>
 
-    <div class="produtos">
+<br>
+<button onclick="comprar()">Comprar pelo WhatsApp</button>
 
-        <div class="produto">
-            <label>
-                <img src="assets/ovo-oreo.webp" alt="">
-                <br>
-                *imagens meramente ilustrativas
+</div>
 
-            </label>
-            <h2>Ovo Explosão de Oreo</h2>
-            <p>300g = R$55</p>
-            <p>2 ovos de 150g = R$55</p>
-            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20Explosão%20de%20Oreo">
-                <button>Comprar</button>
-            </a>
-        </div>
+<script>
 
-        <div class="produto">
-            <img src="assets/ovo-ninho.webp" alt="">
-            <h2>Ovo de Ninho</h2>
-            <p>300g = R$50</p>
-            <p>2 ovos de 150g = R$50</p>
-            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Ninho">
-                <button>Comprar</button>
-            </a>
-        </div>
+const precoOvo = 50;
+const precoComplemento = 2;
 
-        <div class="produto">
-            <img src="assets/ovo-brigadeiro.webp" alt="">
-            <h2>Ovo de Brigadeiro</h2>
-            <p>300g = R$50</p>
-            <p>2 ovos de 150g = R$50</p>
-            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro">
-                <button>Comprar</button>
-            </a>
-        </div>
+function gerarOvos(){
 
-        <div class="produto">
-            <img src="assets/ovo-morango.webp" alt="">
-            <h2>Ovo de Brigadeiro com Morango</h2>
-            <p>300g = R$55</p>
-            <p>2 ovos de 150g = R$55</p>
-            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Morango">
-                <button>Comprar</button>
-            </a>
-        </div>
+let qtd = document.getElementById("quantidade").value;
+let area = document.getElementById("ovos");
 
-        <div class="produto">
-            <img src="assets/ovo-uva-verde.webp" alt="">
-            <h2>Ovo de Brigadeiro com Uva Verde</h2>
-            <p>300g = R$55</p>
-            <p>2 ovos de 150g = R$55</p>
-            <a href="https://wa.me/5527999699243?text=Quero%20o%20Ovo%20de%20Brigadeiro%20com%20Uva">
-                <button>Comprar</button>
-            </a>
-        </div>
-            </a>
-        </div>
+area.innerHTML = "";
 
-    </div>
+for(let i=1;i<=qtd;i++){
 
-</body>
-<script src="scripts.js"></script>
+area.innerHTML += `
 
-</html>
+<hr>
+
+<h3>Ovo ${i}</h3>
+
+<label>Sabor:</label>
+<select id="sabor${i}">
+<option>Oreo</option>
+<option>Ninho</option>
+<option>Brigadeiro</option>
+<option>Brigadeiro com Morango</option>
+<option>Brigadeiro com Uva Verde</option>
+</select>
+
+<br><br>
+
+<label>Complemento (+R$2):</label>
+<select id="comp${i}">
+<option value="">Sem complemento</option>
+<option>Paçoca</option>
+<option>Leite Ninho</option>
+<option>Amendoim</option>
+</select>
+
+`;
+
+}
+
+}
+
+gerarOvos();
+
+function comprar(){
+
+let qtd = document.getElementById("quantidade").value;
+
+let total = 0;
+
+let mensagem = "🍫 Pedido de Ovos de Páscoa %0A";
+
+mensagem += "Quantidade de ovos: " + qtd + "%0A%0A";
+
+for(let i=1;i<=qtd;i++){
+
+let sabor = document.getElementById("sabor"+i).value;
+let comp = document.getElementById("comp"+i).value;
+
+let preco = precoOvo;
+
+mensagem += "Ovo "+i+": "+sabor;
+
+if(comp != ""){
+
+mensagem += " | Complemento: "+comp+" (+R$2)";
+preco += precoComplemento;
+
+}
+
+mensagem += "%0A";
+
+total += preco;
+
+}
+
+mensagem += "%0A💰 Preço total: R$"+total;
+
+let url = "https://wa.me/5527996192066?text=" + mensagem;
+
+window.open(url,"_blank");
+
+}
+
+</script>
