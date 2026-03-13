@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Ovo Explosão de Oreo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topo">🐰 Delícias da Páscoa 🍫</header>
+
+<main>
+
+<div class="produto-detalhe">
+
+<div class="produto-imagem">
+<img src="assets/ovo-de-oreo.jpg">
+</div>
+
+<div class="produto-info">
+
+<h1>Ovo Explosão de Oreo</h1>
+
+<label>Quantidade</label> <input type="number" id="qtd" value="1" min="1" onchange="calcularPreco(55)">
+
+<label>Recheio extra</label> <select id="recheio" onchange="calcularPreco(30)">
+
+<option value="0">Sem extra</option>
+<option value="5">Mais Oreo +5</option>
+<option value="5">Brigadeiro +5</option>
+<option value="5">Ninho +5</option>
+</select>
+
+<div class="extras">
+<label><input type="checkbox" class="extra" data-nome="Confete" value="3" onchange="calcularPreco(35)"> Confete +3</label>
+<label><input type="checkbox" class="extra" data-nome="Granulado" value="3" onchange="calcularPreco(35)"> Granulado +3</label>
+<label><input type="checkbox" class="extra" data-nome="Uva Verde" value="4" onchange="calcularPreco(35)"> Uva Verde +4</label>
+</div>
+
+<h2 id="precoAtual">Total: R$35</h2>
+
+<button class="btn-add" onclick="adicionarProduto('Ovo Explosão de Oreo',35)">
+Adicionar ao carrinho 🛒
+</button>
+
+<a href="index.html">
+<button class="btn-voltar">← Voltar</button>
+</a>
+
+</div>
+
+</div>
+
+</main>
+
+<footer class="rodape">
+© 2026 Delícias da Páscoa
+</footer>
+
+<!-- BOTÃO CARRINHO -->
+
+<div class="carrinho-btn" onclick="toggleCarrinho()">
+🛒
+<div class="carrinho-contador" id="contador">0</div>
+</div>
+
+<!-- PAINEL -->
+
+<div class="carrinho-painel" id="painelCarrinho">
+
+<h2>Seu Carrinho</h2>
+
+<div id="lista"></div>
+
+<h3 id="total"></h3>
+
+<button onclick="limparCarrinho()" class="btn-limpar">
+🗑️ Limpar Carrinho
+</button>
+
+<button onclick="finalizar()" class="btn-finalizar">
+Finalizar no WhatsApp
+</button>
+
+</div>
+
+<script src="carrinho.js"></script>
+
+</body>
+</html>
