@@ -23,25 +23,17 @@
 
 <h1>Ovo de Ninho</h1>
 
-<label>Quantidade</label> <input type="number" id="qtd" value="1" min="1" onchange="calcularPreco(55)">
-
-<label>Recheio extra</label> <select id="recheio" onchange="calcularPreco(30)">
-
-<option value="0">Sem extra</option>
-<option value="5">Mais Oreo +5</option>
-<option value="5">Brigadeiro +5</option>
-<option value="5">Ninho +5</option>
-</select>
+<label>Quantidade</label> <input type="number" id="qtd" value="1" min="1" max="5" oninput="limitarQtd(); calcularPreco(50)"" readonly>
 
 <div class="extras">
-<label><input type="checkbox" class="extra" data-nome="Confete" value="3" onchange="calcularPreco(30)"> Confete +3</label>
-<label><input type="checkbox" class="extra" data-nome="Granulado" value="3" onchange="calcularPreco(30)"> Granulado +3</label>
-<label><input type="checkbox" class="extra" data-nome="Uva Verde" value="4" onchange="calcularPreco(30)"> Uva Verde +4</label>
+<label><input type="checkbox" class="extra" data-nome="Amemdoim" value="2" onchange="calcularPreco(50)"> Amendoim +2</label>
+<label><input type="checkbox" class="extra" data-nome="Leite Ninho" value="2" onchange="calcularPreco(50)"> Leite ninho +2</label>
+<label><input type="checkbox" class="extra" data-nome="Paçoca" value="2" onchange="calcularPreco(50)"> Paçoca +2</label>
 </div>
 
-<h2 id="precoAtual">Total: R$30</h2>
+<h2 id="precoAtual">Total: R$50</h2>
 
-<button class="btn-add" onclick="adicionarProduto('Ovo de Ninho',30)">
+<button class="btn-add" onclick="adicionarProduto('Ovo de Ninho',50)">
 Adicionar ao carrinho 🛒
 </button>
 

@@ -69,20 +69,18 @@ color:#6b3e26;
 
 .produtos{
 display:grid;
-grid-template-columns: repeat(3, 1fr);
-gap:40px;
-max-width:1100px;
-margin:auto;
-padding:40px;
+grid-template-columns: repeat(2, 420px); /* ⭐ largura padrão */
+justify-content:center;
+gap:50px;
+margin:60px auto;
 }
 
-
 .produto{
+width:100%;
 background:white;
-padding:20px;
-border-radius:20px;
-width:260px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+padding:25px;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
 text-align:center;
 transition:.3s;
 }
@@ -93,18 +91,29 @@ transform:translateY(-8px);
 
 .produto img{
 width:100%;
-height:180px;
+height:250px;
 object-fit:cover;
-border-radius:15px;
+border-radius:20px;
+}
+
+.produto h3{
+font-size:22px;
+min-height:60px;   /* ⭐ reserva espaço */
+}
+
+.produto p{
+min-height:20px;
+color:#666;
 }
 
 .produto button{
-margin-top:10px;
+margin-top:15px;
+padding:12px;
+font-size:16px;
+border:none;
+border-radius:12px;
 background:#6b3e26;
 color:white;
-border:none;
-padding:10px 20px;
-border-radius:10px;
 cursor:pointer;
 }
 
@@ -142,13 +151,7 @@ padding:20px;
 text-align:center;
 }
 
-.produtos{
-display:flex;
-gap:20px;
-padding:20px;
-justify-content:center;
-flex-wrap:wrap;
-}
+ 
 
 .card{
 display:flex;
@@ -238,7 +241,7 @@ transition:.4s;
 z-index:998;
 overflow:auto;
 }
-
+/*PAGINAS MENORES*/
 .produto-detalhe{
 display:flex;
 gap:50px;
@@ -281,6 +284,9 @@ padding:12px;
 font-size:16px;
 border-radius:8px;
 border:1px solid #ccc;
+}
+input[type=number]::-webkit-inner-spin-button{
+opacity:0.5;
 }
 
 .extras label{
